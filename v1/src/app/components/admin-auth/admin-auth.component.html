@@ -1,0 +1,12 @@
+<div class="admin-auth">
+  <div class="sign-up">
+    <h1>Admin Sign-Up</h1>
+    <form #adminSignUp="ngForm" (ngSubmit)="signUp(adminSignUp.value)" class="common-form">
+      <input class="form-input" type="text" ngModel name="name" placeholder="Enter name">
+      <input class="form-input" type="text" ngModel name="surname" placeholder="Enter surname">
+      <input class="form-input" type="email" ngModel name="email" placeholder="Enter email">
+      <input class="form-input" type="password" ngModel name="password" placeholder="Enter password">
+      <button class="form-button">Search</button>
+    </form>
+  </div>
+</div>
