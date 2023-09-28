@@ -1,0 +1,10 @@
+<div class="user-path">
+    <h1>User Sign-up</h1>
+  <form #UserSignUp="ngForm" class="c-form" (ngSubmit)="signUp(UserSignUp.value)">
+    <input class="form-input" type="text" placeholder="Ingresa nombre" name="name" ngModel>
+    <input class="form-input" type="text" placeholder="Ingresa apellido" name="surname" ngModel>
+    <input class="form-input" type="text" placeholder="Ingresa correo electrónico" name="email" ngModel>
+    <input class="form-input" type="password" placeholder="Ingresa contraseña" name="password" ngModel>
+    <button mat-button class="b-button">Registrate</button>
+  </form>
+</div>

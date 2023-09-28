@@ -1,0 +1,25 @@
+<div class="register-container">
+  <div *ngIf="!showLogin" class="sign-up">
+    <h1>Regístrate</h1>
+    <form #userSignUp="ngForm" (ngSubmit)="signUp(userSignUp.value)" class="sign-form">
+      <input class="form-input" type="text" ngModel name="name" placeholder="Nombre"/>
+      <input class="form-input" type="text" ngModel name="surname" placeholder="Apellido"/>
+      <input class="form-input" type="text" ngModel name="email" placeholder="Correo electrónico"/>
+      <input class="form-input" type="password" ngModel name="password" placeholder="Contraseña"/>
+      <a class="auth-toggle-link" (click)="openLogin()">¿Ya tienes una cuenta? Click para iniciar sesión</a>
+      <button class="form-button" mat-button>Ingresar</button>
+    </form>
+  </div>
+
+  <!-- LOGINN -->
+  <div *ngIf="showLogin" class="login">
+    <h1>Iniciar sesión</h1>
+    <p class="error-p">{{authError}}</p>
+    <form #userLogin="ngForm" (ngSubmit)="login(userLogin.value)" class="login-form">
+      <input class="form-input" type="text" ngModel name="email" placeholder="Correo electrónico"/>
+      <input class="form-input" type="password" ngModel name="password" placeholder="Contraseña"/>
+      <a class="auth-toggle-link" (click)="openSignUp()">¿No tienes una cuenta? Click para registrarte</a>
+      <button class="form-button" mat-button>Ingresar</button>
+    </form>
+  </div>
+</div>

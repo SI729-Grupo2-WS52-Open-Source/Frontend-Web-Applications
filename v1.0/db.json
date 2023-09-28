@@ -1,0 +1,506 @@
+{
+  "register": [
+    {
+      "name": "Michelle",
+      "surname": "Moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "1234567890",
+      "id": 1
+    },
+    {
+      "name": "Nirvana",
+      "surname": "García",
+      "email": "u202110244@upc.edu.pe",
+      "password": "1234567890",
+      "id": 2
+    },
+    {
+      "name": "Marcelo",
+      "surname": "Scerpella",
+      "email": "u202110123@upc.edu.pe",
+      "password": "1234567890",
+      "id": 3
+    },
+    {
+      "name": "pepita",
+      "surname": "Pepo",
+      "email": "pepito@gmail.com",
+      "password": "1234567890",
+      "id": 4
+    },
+    {
+      "name": "bruce",
+      "surname": "Li",
+      "email": "Li@gmail.com",
+      "password": "123456789",
+      "id": 5
+    },
+    {
+      "name": "Ana",
+      "surname": "Banana",
+      "email": "ban@gmail.com",
+      "password": "0123",
+      "id": 6
+    },
+    {
+      "name": "Elenea",
+      "surname": "Davila",
+      "email": "ele@gmail.com",
+      "password": "123",
+      "id": 7
+    },
+    {
+      "name": "Lili",
+      "surname": "Mendoza",
+      "email": "li@gmail.com",
+      "password": "123",
+      "id": 8
+    },
+    {
+      "name": "pepita",
+      "surname": "Pepo",
+      "email": "pepito@gmail.com",
+      "password": "123",
+      "id": 9
+    },
+    {
+      "name": "Michelle",
+      "surname": "Moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "123",
+      "id": 10
+    },
+    {
+      "name": "hola",
+      "surname": "ge",
+      "email": "hola@gmail.com",
+      "password": "123",
+      "id": 11
+    },
+    {
+      "name": "mi",
+      "surname": "mi",
+      "email": "mi@gmail.com",
+      "password": "123",
+      "id": 12
+    },
+    {
+      "name": "mugi",
+      "surname": "moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "123456789",
+      "id": 13
+    },
+    {
+      "name": "mugi",
+      "surname": "moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "123",
+      "id": 14
+    },
+    {
+      "name": "mugi",
+      "surname": "hola",
+      "email": "u202110543@upc.edu.pe",
+      "password": "123",
+      "id": 15
+    },
+    {
+      "name": "mugi",
+      "surname": "moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "12345",
+      "id": 16
+    },
+    {
+      "name": "pepita",
+      "surname": "Pepo",
+      "email": "pepito@gmail.com",
+      "password": "123",
+      "id": 17
+    },
+    {
+      "name": "mugi",
+      "surname": "moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "123",
+      "id": 18
+    },
+    {
+      "name": "hola",
+      "surname": "ge",
+      "email": "hola@gmail.com",
+      "password": "1234567890",
+      "id": 19
+    },
+    {
+      "name": "mugi",
+      "surname": "moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "123",
+      "id": 20
+    },
+    {
+      "name": "Miche",
+      "surname": "Moreno",
+      "email": "mi@gmail.com",
+      "password": "123",
+      "id": 21
+    },
+    {
+      "name": "mugi",
+      "surname": "moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "123",
+      "id": 22
+    },
+    {
+      "name": "pepita",
+      "surname": "Pepo",
+      "email": "pepito@gmail.com",
+      "password": "123456789",
+      "id": 23
+    },
+    {
+      "name": "pepita",
+      "surname": "Pepo",
+      "email": "pepito@gmail.com",
+      "password": "123",
+      "id": 24
+    },
+    {
+      "name": "mugi",
+      "surname": "moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "123456789",
+      "id": 25
+    },
+    {
+      "name": "mugi",
+      "surname": "moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "1234567890'",
+      "id": 26
+    },
+    {
+      "name": "hola",
+      "surname": "gege",
+      "email": "h@gmail.com",
+      "password": "123456787654",
+      "id": 27
+    },
+    {
+      "name": "mugi",
+      "surname": "moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "12",
+      "id": 28
+    },
+    {
+      "name": "mugitg",
+      "surname": "moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "1234567654",
+      "id": 29
+    },
+    {
+      "name": "mi",
+      "surname": "mi",
+      "email": "mi@gmail.com",
+      "password": "23456765432",
+      "id": 30
+    },
+    {
+      "name": "mugi",
+      "surname": "moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "12345678",
+      "id": 31
+    },
+    {
+      "name": "hola",
+      "surname": "hola",
+      "email": "hola@gmail.com",
+      "password": "1223456",
+      "id": 32
+    },
+    {
+      "name": "hola",
+      "surname": "hola",
+      "email": "hola@gmail.com",
+      "password": "123455",
+      "id": 33
+    },
+    {
+      "name": "hola",
+      "surname": "hola",
+      "email": "hola@gmail.com",
+      "password": "12345",
+      "id": 34
+    },
+    {
+      "name": "hola",
+      "surname": "hola",
+      "email": "gho",
+      "password": "3456",
+      "id": 35
+    },
+    {
+      "name": "hola",
+      "surname": "ge",
+      "email": "hola@gmail.com",
+      "password": "12357896",
+      "id": 36
+    },
+    {
+      "name": "pepita",
+      "surname": "Pepo",
+      "email": "pepito@gmail.com",
+      "password": "789",
+      "id": 37
+    },
+    {
+      "name": "g",
+      "surname": "hola",
+      "email": "pepito@gmail.com",
+      "password": "g",
+      "id": 38
+    },
+    {
+      "name": "a",
+      "surname": "a",
+      "email": "gho",
+      "password": "1",
+      "id": 39
+    },
+    {
+      "name": "Ana",
+      "surname": "kj",
+      "email": "k",
+      "password": "k",
+      "id": 40
+    }
+  ],
+  "products": [
+    {
+      "name": "inuyasha - Figure",
+      "price": "160",
+      "color": "negro",
+      "category": "Figuras",
+      "description": "hola",
+      "image": "https://m.media-amazon.com/images/I/51+F1JEmchL._AC_UF894,1000_QL80_.jpg",
+      "id": 5
+    },
+    {
+      "name": "inuyasha - Figure",
+      "price": "1000",
+      "color": "rojo",
+      "category": "juguetes",
+      "description": "hola",
+      "image": "https://m.media-amazon.com/images/I/51+F1JEmchL._AC_UF894,1000_QL80_.jpg",
+      "id": 6
+    },
+    {
+      "name": "kaiba",
+      "price": "1000",
+      "color": "negro",
+      "category": "anime",
+      "description": "hola",
+      "image": "https://en.megahobby.jp/cdn/shop/products/1026_001_1024x.jpg?v=1644143633",
+      "id": 7
+    },
+    {
+      "name": "Xiao Er",
+      "price": "150",
+      "color": "Green",
+      "category": "chibi",
+      "description": "Xier Er chibi figure",
+      "image": "https://42shops.com/cdn/shop/products/battle-through-the-heavens-xiao-xun-er-figure-809573.jpg?v=1684530606&width=1445",
+      "id": 8
+    },
+    {
+      "name": "Luffy - Figure",
+      "price": "150",
+      "color": "negro",
+      "category": "Figuras",
+      "description": "Luffy",
+      "image": "https://tamashiinations.fr/15516-large_default/one-piece-figure-monkeydluffy-imagination-works.jpg",
+      "id": 9
+    },
+    {
+      "name": "Tomioka",
+      "price": "1500",
+      "color": "Azul",
+      "category": "Figuras",
+      "description": "Kimetsu no Yaiba",
+      "image": "https://www.rightstufanime.com/images/productImages/4534530885555_figure-giyu-tomioka-demon-slayer-kimetsu-no-yaiba-figure-primary.jpg?resizeid=3&resizeh=600&resizew=600",
+      "id": 10
+    }
+  ],
+  "users": [
+    {
+      "name": "pepita",
+      "surname": "Pepo",
+      "email": "pepito@gmail.com",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "name": "Michelle",
+      "surname": "Moreno",
+      "email": "hola@gmail.com",
+      "password": "123456677",
+      "id": 3
+    },
+    {
+      "name": "Michelle",
+      "surname": "Moreno",
+      "email": "hola@gmail.com",
+      "password": "1234566776",
+      "id": 4
+    },
+    {
+      "name": "hola",
+      "surname": "moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "741025696",
+      "id": 5
+    },
+    {
+      "name": "hola",
+      "surname": "hola",
+      "email": "h",
+      "password": "h",
+      "id": 6
+    },
+    {
+      "name": "hola",
+      "surname": "hola",
+      "email": "h",
+      "password": "h",
+      "id": 7
+    },
+    {
+      "name": "Tomioka",
+      "surname": "t",
+      "email": "t",
+      "password": "t",
+      "id": 8
+    },
+    {
+      "name": "te",
+      "surname": "te",
+      "email": "ele@gmail.com",
+      "password": "1",
+      "id": 9
+    },
+    {
+      "name": "mugi",
+      "surname": "moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "123",
+      "id": 10
+    },
+    {
+      "name": "mugi",
+      "surname": "moreno",
+      "email": "u202110543@upc.edu.pe",
+      "password": "1",
+      "id": 11
+    },
+    {
+      "name": "r",
+      "surname": "r",
+      "email": "r",
+      "password": "r",
+      "id": 12
+    },
+    {
+      "name": "y",
+      "surname": "y",
+      "email": "y",
+      "password": "y",
+      "id": 13
+    },
+    {
+      "name": "u",
+      "surname": "u",
+      "email": "u",
+      "password": "u",
+      "id": 14
+    },
+    {
+      "name": "inuyasha",
+      "surname": "i",
+      "email": "i",
+      "password": "i",
+      "id": 15
+    },
+    {
+      "name": "hola",
+      "surname": "o",
+      "email": "o",
+      "password": "o",
+      "id": 16
+    },
+    {
+      "name": "u",
+      "surname": "u",
+      "email": "u",
+      "password": "o",
+      "id": 17
+    },
+    {
+      "name": "p",
+      "surname": "Pepo",
+      "email": "pepito@gmail.com",
+      "password": "p",
+      "id": 18
+    },
+    {
+      "name": "o",
+      "surname": "o",
+      "email": "o",
+      "password": "o",
+      "id": 19
+    },
+    {
+      "name": "q",
+      "surname": "q",
+      "email": "q",
+      "password": "q123",
+      "id": 20
+    },
+    {
+      "name": "inuyasha",
+      "surname": "i",
+      "email": "i",
+      "password": "iiii",
+      "id": 21
+    },
+    {
+      "name": "pepita",
+      "surname": "2",
+      "email": "ele@gmail.com",
+      "password": "ew",
+      "id": 22
+    },
+    {
+      "name": "o",
+      "surname": "o",
+      "email": "o",
+      "password": "o",
+      "id": 23
+    },
+    {
+      "name": "pepita",
+      "surname": "Pepo",
+      "email": "pepito@gmail.com",
+      "password": "p",
+      "id": 24
+    }
+  ]
+}

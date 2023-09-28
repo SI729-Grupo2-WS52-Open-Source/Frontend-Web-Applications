@@ -1,0 +1,36 @@
+.form-input{
+  height: 34px;
+  margin-bottom: 20px;
+  background-color: #D3D3D3;
+  color: black;
+  border-radius: 10px;
+  border: 1px solid #A0A0A0;
+  padding: 4px;
+}
+
+.c-form{
+  text-align: center;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  width: 300px;
+}
+
+.b-button{
+  width: 100px;
+  height: 34px;
+  background-color: #AA1D1D;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid #000000;
+  padding: 20px;
+  margin: auto;
+}
+
+.user-path h1{
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 80px;
+  font-weight: normal;
+}
