@@ -10,19 +10,14 @@ export interface login{
   password: string
 }
 
-
-export interface product{
-  name: string,
-  price: string,
-  category: string,
-  color: string,
-  description: string,
-  image: string,
-  id: number,
-  quantity: undefined | number,
-  productId: undefined | number
-
+export interface priceSummary{
+  price: number,
+  discount: number,
+  tax: number,
+  delivery: number,
+  total: number
 }
+
 
 export interface cart{
   name: string,
@@ -37,13 +32,6 @@ export interface cart{
   productId: number
 }
 
-export interface priceSummary{
-  price: number,
-  discount: number,
-  tax: number,
-  delivery: number,
-  total: number
-}
 
 export interface order{
   email: string,
@@ -52,4 +40,17 @@ export interface order{
   totalPrice: number,
   userId: string,
   id: number | undefined;
+}
+
+export interface product{
+  name: string,
+  price: string,
+  category: string,
+  color: string,
+  description: string,
+  image: string,
+  id: number,
+  quantity: undefined | number,
+  productId: undefined | number
+
 }
