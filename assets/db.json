@@ -513,19 +513,6 @@
       "description": "figura coleccionable",
       "image": "https://pbs.twimg.com/media/Emgt6gvW8AAt5yg?format=jpg&name=large",
       "quantity": 1,
-      "userId": 6,
-      "productId": 1,
-      "id": 5
-    },
-    {
-      "nameCategory": "ONE PUNCH MAN",
-      "name": "Saitama Escala 1/4",
-      "price": "360",
-      "color": "naranja",
-      "category": "Anime",
-      "description": "figura coleccionable",
-      "image": "https://pbs.twimg.com/media/Emgt6gvW8AAt5yg?format=jpg&name=large",
-      "quantity": 1,
       "userId": 9,
       "productId": 1,
       "id": 6
@@ -555,6 +542,19 @@
       "userId": 10,
       "productId": 2,
       "id": 8
+    },
+    {
+      "nameCategory": "TOKYO GHOUL",
+      "name": "Kaneki vs Yam Escala 1/8",
+      "price": "380",
+      "color": "red",
+      "category": "Anime",
+      "description": "Coleccionable",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL538bvKtO-gOm-jBBtjZu8dPYILY9TgO_kGhc1T5J9KPdc7YtURZPPRpwJp4tTlnX7-U&usqp=CAU",
+      "quantity": 2,
+      "userId": 6,
+      "productId": 7,
+      "id": 10
     }
   ],
   "orders": [
