@@ -478,12 +478,11 @@
       "id": 7
     },
     {
-      "name": "mugi",
+      "name": "alejandra",
       "surname": "hola",
       "email": "mugi@gmail.com",
       "password": "123",
-      "numberCellphone": "123",
-      "payment": "option1",
+      "pay": "option1",
       "id": 8
     },
     {
@@ -493,48 +492,18 @@
       "password": "123",
       "pay": "tarjeta",
       "id": 9
+    },
+    {
+      "name": "Michelle",
+      "surname": "Moreno",
+      "email": "m@gmail.com",
+      "password": "123",
+      "numberCellphone": "123",
+      "payment": "tarjeta",
+      "id": 10
     }
   ],
   "cart": [
-    {
-      "nameCategory": "Kimetsu No Yaiba",
-      "name": "Tomioka - Escala 1/4",
-      "price": "110",
-      "color": "azul",
-      "category": "Anime",
-      "description": "figura coleccionable",
-      "image": "https://www.rightstufanime.com/images/productImages/4534530885555_figure-giyu-tomioka-demon-slayer-kimetsu-no-yaiba-figure-primary.jpg?resizeid=3&resizeh=600&resizew=600",
-      "quantity": 1,
-      "userId": 8,
-      "productId": 1,
-      "id": 1
-    },
-    {
-      "nameCategory": "KIMETSU NO YAIBA",
-      "name": "Zenitsu Agatsu Escala 1/4",
-      "price": "360",
-      "color": "amarillo",
-      "category": "Anime",
-      "description": "Coleccionable",
-      "image": "https://tamashiinations.fr/14091-large_default/demon-slayer-figure-zenitsu-agatsuma-thunderclap-and-flash-figuarts-zero.jpg",
-      "quantity": 1,
-      "userId": 9,
-      "productId": 5,
-      "id": 2
-    },
-    {
-      "nameCategory": "BLEACH",
-      "name": "Kurosaki Ichigo Escala 1/8",
-      "price": "370",
-      "color": "black",
-      "category": "Anime",
-      "description": "Coleccionable",
-      "image": "https://yesgk.com/cdn/shop/files/bleach-kurosaki-ichigo-resin-statue-black-wing-studio-pre-order-567.webp?v=1683351686&width=1946",
-      "quantity": 1,
-      "userId": 9,
-      "productId": 4,
-      "id": 3
-    },
     {
       "nameCategory": "EVANGELION",
       "name": "Rei Ayanami Escala 1/8",
@@ -544,20 +513,12 @@
       "description": "Figura coleccionable",
       "image": "https://images.goodsmile.info/cgm/images/product/20220318/12478/96674/large/f30759b629a7e830c51a3eec73c186d8.jpg",
       "quantity": 1,
+      "userId": 10,
       "productId": 3,
-      "userId": null,
       "id": 4
     }
   ],
   "orders": [
-    {
-      "email": "mi",
-      "address": "mira",
-      "contact": "mi",
-      "totalPrice": 210,
-      "userId": 6,
-      "id": 1
-    },
     {
       "email": "i",
       "address": "i",
@@ -597,6 +558,38 @@
       "totalPrice": 830,
       "userId": 9,
       "id": 6
+    },
+    {
+      "email": "hola@gmail.com",
+      "address": "av.brasil",
+      "contact": "si",
+      "totalPrice": 329,
+      "userId": 8,
+      "id": 8
+    },
+    {
+      "email": "ale@gmail.com",
+      "address": "bolivar",
+      "contact": "qwe",
+      "totalPrice": 460,
+      "userId": 10,
+      "id": 9
+    },
+    {
+      "email": "eli",
+      "address": "av.brasil",
+      "contact": "melissa Paredes",
+      "totalPrice": 900,
+      "userId": 10,
+      "id": 10
+    },
+    {
+      "email": "cora@gmail.com",
+      "address": "lima",
+      "contact": "nohay",
+      "totalPrice": 360,
+      "userId": 6,
+      "id": 11
     }
   ],
   "shipping": [
