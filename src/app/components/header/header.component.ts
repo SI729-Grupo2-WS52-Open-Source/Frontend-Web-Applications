@@ -23,7 +23,7 @@ export class HeaderComponent {
   iconClose= faClose;
   constructor(private router: Router, private product: ProductService) {
   }
-
+  isSubmenuVisible: { [key: string]: boolean } = {};
   ngOnInit(){
     this.router.events.subscribe((val: any) => {
       if (val.url){
@@ -105,6 +105,10 @@ export class HeaderComponent {
 
   toggleSubcategories(category: string) {
     this.showSubcategories[category] = !this.showSubcategories[category];
+  }
+
+  toggleSubmenu(category: string) {
+    this.isSubmenuVisible[category] = !this.isSubmenuVisible[category];
   }
 
   protected readonly faEdit = faEdit;

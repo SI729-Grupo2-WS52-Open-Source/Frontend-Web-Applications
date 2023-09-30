@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ProductService} from "../../services/product.service";
 import {cart, product} from "../../models/data-model";
+import {QuantityService} from "../../services/quantity.service";
 
 @Component({
   selector: 'app-product-details',
@@ -10,62 +11,65 @@ import {cart, product} from "../../models/data-model";
 })
 export class ProductDetailsComponent {
   productData: undefined | product;
-  cartData: product | undefined;
-
   productQuantity: number = 1;
   quantity: number = 1;
-  removeCart=false;
 
-  constructor(private activeRoute: ActivatedRoute, private product: ProductService) {
+  removeCart=false;
+  cartData: product | undefined;
+  constructor(private activeRoute: ActivatedRoute, private product: ProductService,   private quantityService: QuantityService) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
     let productId = this.activeRoute.snapshot.paramMap.get('productId');
     console.warn(productId);
+
     productId && this.product.getProduct(productId).subscribe((result) => {
       console.warn(result);
       this.productData = result;
 
       let cartData = localStorage.getItem('localCart');
-      if (productId && cartData){
+      if (productId && cartData) {
         let items = JSON.parse(cartData);
         items = items.filter((item: product) => productId == item.id.toString());
-        if (items.length){
+        if (items.length) {
           this.removeCart = true;
-        }else {
+        } else {
           this.removeCart = false;
         }
       }
 
       let user = localStorage.getItem('user');
-      if (user){
+      if (user) {
         let userId = user && JSON.parse(user).id;
+
+        this.quantityService.quantity$.subscribe((quantity) => {
+          this.productQuantity = quantity;
+        });
+
         this.product.getCartList(userId);
         this.product.cartData.subscribe((result) => {
-            let item = result.filter((item: product) => productId?.toString()===item.productId?.toString())
-          if (item.length){
-            this.cartData= item[0];
-            this.removeCart=true;
+          let item = result.filter((item: product) => productId?.toString() === item.productId?.toString())
+          if (item.length) {
+            this.cartData = item[0];
+            this.removeCart = true;
           }
-        })
+        });
       }
-    })
-
+    });
   }
 
-  handleQuantity(val: string){
-    if(val === 'plus') {
 
-      this.productQuantity += 1;
-
-    } else if(val === 'min') {
-
-      if(this.productQuantity > 1) {
-        this.productQuantity -= 1;
-      }
-
+  handleQuantity(val: string) {
+    if (val === 'plus' && this.productQuantity < 20) {
+      this.productQuantity++;
+    } else if (val === 'min' && this.productQuantity > 1) {
+      this.productQuantity--;
     }
+
+    // Actualiza la cantidad en el servicio QuantityService
+    this.quantityService.updateQuantity(this.productQuantity);
   }
+
 
   AddToCart(){
     if(this.productData){
@@ -90,12 +94,10 @@ export class ProductDetailsComponent {
         })
       }
     }
-
-
   }
   removeToCart(productId: number){
     if (!localStorage.getItem('user')){
-    this.product.removeItemFromCart(productId);
+      this.product.removeItemFromCart(productId);
 
     }else {
       let user = localStorage.getItem('user');
