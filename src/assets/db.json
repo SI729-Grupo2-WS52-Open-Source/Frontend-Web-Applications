@@ -505,6 +505,32 @@
   ],
   "cart": [
     {
+      "nameCategory": "ONE PUNCH MAN",
+      "name": "Saitama Escala 1/4",
+      "price": "360",
+      "color": "naranja",
+      "category": "Anime",
+      "description": "figura coleccionable",
+      "image": "https://pbs.twimg.com/media/Emgt6gvW8AAt5yg?format=jpg&name=large",
+      "quantity": 1,
+      "userId": 6,
+      "productId": 1,
+      "id": 5
+    },
+    {
+      "nameCategory": "ONE PUNCH MAN",
+      "name": "Saitama Escala 1/4",
+      "price": "360",
+      "color": "naranja",
+      "category": "Anime",
+      "description": "figura coleccionable",
+      "image": "https://pbs.twimg.com/media/Emgt6gvW8AAt5yg?format=jpg&name=large",
+      "quantity": 1,
+      "userId": 9,
+      "productId": 1,
+      "id": 6
+    },
+    {
       "nameCategory": "EVANGELION",
       "name": "Rei Ayanami Escala 1/8",
       "price": "360",
@@ -515,7 +541,20 @@
       "quantity": 1,
       "userId": 10,
       "productId": 3,
-      "id": 4
+      "id": 7
+    },
+    {
+      "nameCategory": "DOROHEDORO",
+      "name": "Nikaido & Cai Escala 1/8",
+      "price": "360",
+      "color": "naranja",
+      "category": "Anime",
+      "description": "Figura coleccionable",
+      "image": "https://www.figureart.store/cdn/shop/products/dorohedoro-caiman-nikaido-elite-figumiz-statue-resin-figures-figurama-collectors-872864.jpg?v=1641576404",
+      "quantity": 3,
+      "userId": 10,
+      "productId": 2,
+      "id": 8
     }
   ],
   "orders": [
@@ -574,22 +613,6 @@
       "totalPrice": 460,
       "userId": 10,
       "id": 9
-    },
-    {
-      "email": "eli",
-      "address": "av.brasil",
-      "contact": "melissa Paredes",
-      "totalPrice": 900,
-      "userId": 10,
-      "id": 10
-    },
-    {
-      "email": "cora@gmail.com",
-      "address": "lima",
-      "contact": "nohay",
-      "totalPrice": 360,
-      "userId": 6,
-      "id": 11
     }
   ],
   "shipping": [
