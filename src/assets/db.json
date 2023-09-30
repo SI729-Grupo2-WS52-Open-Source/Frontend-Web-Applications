@@ -501,34 +501,30 @@
       "numberCellphone": "123",
       "payment": "tarjeta",
       "id": 10
+    },
+    {
+      "name": "Gabriel",
+      "surname": "Bernal",
+      "email": "gber@gmail.com",
+      "password": "12345",
+      "numberCellphone": "917545687",
+      "payment": "tarjeta",
+      "id": 11
     }
   ],
   "cart": [
     {
-      "nameCategory": "ONE PUNCH MAN",
-      "name": "Saitama Escala 1/4",
+      "nameCategory": "DOROHEDORO",
+      "name": "Nikaido & Cai Escala 1/8",
       "price": "360",
       "color": "naranja",
       "category": "Anime",
-      "description": "figura coleccionable",
-      "image": "https://pbs.twimg.com/media/Emgt6gvW8AAt5yg?format=jpg&name=large",
-      "quantity": 1,
-      "userId": 9,
-      "productId": 1,
-      "id": 6
-    },
-    {
-      "nameCategory": "EVANGELION",
-      "name": "Rei Ayanami Escala 1/8",
-      "price": "360",
-      "color": "celeste",
-      "category": "Anime",
       "description": "Figura coleccionable",
-      "image": "https://images.goodsmile.info/cgm/images/product/20220318/12478/96674/large/f30759b629a7e830c51a3eec73c186d8.jpg",
+      "image": "https://www.figureart.store/cdn/shop/products/dorohedoro-caiman-nikaido-elite-figumiz-statue-resin-figures-figurama-collectors-872864.jpg?v=1641576404",
       "quantity": 1,
-      "userId": 10,
-      "productId": 3,
-      "id": 7
+      "userId": 6,
+      "productId": 2,
+      "id": 1
     },
     {
       "nameCategory": "DOROHEDORO",
@@ -538,81 +534,20 @@
       "category": "Anime",
       "description": "Figura coleccionable",
       "image": "https://www.figureart.store/cdn/shop/products/dorohedoro-caiman-nikaido-elite-figumiz-statue-resin-figures-figurama-collectors-872864.jpg?v=1641576404",
-      "quantity": 3,
-      "userId": 10,
+      "quantity": 1,
+      "userId": 11,
       "productId": 2,
-      "id": 8
-    },
-    {
-      "nameCategory": "TOKYO GHOUL",
-      "name": "Kaneki vs Yam Escala 1/8",
-      "price": "380",
-      "color": "red",
-      "category": "Anime",
-      "description": "Coleccionable",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL538bvKtO-gOm-jBBtjZu8dPYILY9TgO_kGhc1T5J9KPdc7YtURZPPRpwJp4tTlnX7-U&usqp=CAU",
-      "quantity": 2,
-      "userId": 6,
-      "productId": 7,
-      "id": 10
+      "id": 2
     }
   ],
   "orders": [
     {
-      "email": "i",
-      "address": "i",
-      "contact": "i",
-      "totalPrice": 460,
-      "userId": 9,
-      "id": 2
-    },
-    {
-      "email": "yes yes",
-      "address": "yes",
-      "contact": "yes",
-      "totalPrice": 300,
-      "userId": 9,
-      "id": 3
-    },
-    {
-      "email": "si@gmail.com",
-      "address": "si",
-      "contact": "si",
-      "totalPrice": 215,
-      "userId": 9,
-      "id": 4
-    },
-    {
-      "email": "ja",
-      "address": "jal",
-      "contact": "foo",
-      "totalPrice": 1020,
-      "userId": 9,
-      "id": 5
-    },
-    {
-      "email": "ale@gmail.com",
-      "address": "bolivar",
-      "contact": "hola@gmail.com",
-      "totalPrice": 830,
-      "userId": 9,
-      "id": 6
-    },
-    {
-      "email": "hola@gmail.com",
-      "address": "av.brasil",
-      "contact": "si",
-      "totalPrice": 329,
-      "userId": 8,
-      "id": 8
-    },
-    {
-      "email": "ale@gmail.com",
-      "address": "bolivar",
-      "contact": "qwe",
-      "totalPrice": 460,
-      "userId": 10,
-      "id": 9
+      "email": "cora@gmail.com",
+      "address": "lima",
+      "contact": "nohay",
+      "totalPrice": 360,
+      "userId": 11,
+      "id": 1
     }
   ],
   "shipping": [
