@@ -3,7 +3,6 @@ import {HttpClient} from "@angular/common/http";
 import {login, SignUp} from "../models/data-model";
 import {BehaviorSubject} from "rxjs";
 import {Router} from "@angular/router";
-import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,14 +10,11 @@ import { environment } from '../../environments/environment';
 export class AdminService {
   isAdminLoggedIn = new BehaviorSubject<boolean>(false);
   isLoginError = new EventEmitter<boolean>(false);
-
-  baseUrl: string = environment.baseURL;
-
   constructor(private http: HttpClient, private router: Router) { }
 
   userSignUp(data: SignUp): void{
     this.http
-      .post(`${this.baseUrl}/admin`,
+      .post('http://localhost:3000/admin',
       data,
       {observe: 'response'}
     ).subscribe((result) => {
@@ -37,7 +33,7 @@ export class AdminService {
 
   userLogin(data: login){
     console.warn(data);
-    this.http.get(`${this.baseUrl}/admin?email=${data.email}&password=${data.password}`,
+    this.http.get(`http://localhost:3000/admin?email=${data.email}&password=${data.password}`,
       {observe: 'response'}
     ).subscribe((result: any) => {
       console.warn(result);

@@ -2,6 +2,7 @@
   <div class="col-sm-6">
     <img class="product-image" src="{{productData.image}}" alt="products images">
   </div>
+
   <div class="col-sm-6">
     <div class="details">
       <h1>{{productData.nameCategory}}</h1>
@@ -21,7 +22,9 @@
       </div>
       <button *ngIf="!removeCart" class="form-button add-to-cart" (click)="AddToCart()"><p class="p-add">Añadir a la Canasta</p></button>
       <button *ngIf="removeCart" class="form-button remove-from-cart" (click)="removeToCart(productData.id)"><p class="eliminate">Eliminar de la Canasta</p></button>
-      <button class="form-button buy-button">Comprar ahora</button>
+      <a routerLink="/"><button class="form-button buy-button">Ver más</button></a>
     </div>
   </div>
+
+
 </div>

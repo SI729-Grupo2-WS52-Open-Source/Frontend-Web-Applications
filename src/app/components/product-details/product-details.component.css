@@ -14,6 +14,7 @@
 .product-details{
   margin-top: 50px;
   margin-bottom: 80px;
+  margin-right: 0;
 }
 
 h1{
@@ -54,40 +55,48 @@ h5,h6{
 }
 
 .add-to-cart {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #AA1D1D;
+  border-radius: 1.4rem;
+  border-color: #AA1D1D;
+  height: 3.3rem;
+  width: 11rem;
+  margin-left: 1rem;
+  text-align: center;
+
+}
+
+
+.add-to-cart .p-add, .remove-from-cart .eliminate {
+ margin-top: 0.9rem;
+}
+
+
+.remove-from-cart, .buy-button {
+  cursor: pointer;
   background-color: #AA1D1D;
-  color: white;
-  border-radius: 25px;
-  height: 50px;
-  border-collapse: collapse;
+  color: #ffffff;
+  border-radius: 1.4rem;
+  border: none;
+  height: 3.3rem;
+  width: 11rem;
+  margin-left: 1rem;
+  text-align: center;
 }
 
-.add-to-cart .p-add{
-    padding-top: 10px;
-    font-weight: bold;
+.remove-from-cart:hover, .buy-button:hover {
+  background-color: #7a1616;
+
 }
 
-.remove-from-cart .eliminate{
-  padding-top: 10px;
-  font-weight: bold;
+.add-to-cart:hover {
+  background-color: #dabcbc;
 }
 
-.remove-from-cart {
-  background-color: white;
-  color: #AA1D1D;
-  border: 5px solid #AA1D1D;
-  border-radius: 25px;
-  height: 50px;
-  border-collapse: collapse;
-}
 
-.buy-button{
-  background-color: white;
-  color: #AA1D1D;
-  border: 5px solid #AA1D1D;
-  border-radius: 25px;
-  height: 50px;
-  border-collapse: collapse;
-}
+
+
 .quantity {
   margin-bottom: 30px;
   display: flex;
@@ -116,6 +125,10 @@ h5,h6{
   width: 40px;
   cursor: pointer;
   border: none;
+}
+
+.quantity-button:hover {
+  color: #b41a1a;
 }
 
 @media(max-width: 600px) {

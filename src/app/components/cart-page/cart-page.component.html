@@ -1,36 +1,47 @@
 <div class="cart-page">
-  <h1>Cart Page</h1>
+  <h1>Carrito de Compra</h1>
   <div class="row">
+
     <div class="col-sm-8 details">
-      <ul *ngFor="let cart of cartData">
-        <li>
-          <img src="{{ cart.image }}" alt="Image of products in cart">
-        </li>
-        <li>
-          <span>{{ cart.name }}</span>
-        </li>
-        <li>
-          <span>Price: {{ cart.price | currency }}</span>
-        </li>
-        <li>
-          <h3 class="quantity-h">Cantidad</h3>
-          <button (click)="handleQuantity('min', cart)">-</button>
-          <input type="number" [(ngModel)]="cart.quantity" (ngModelChange)="handleQuantity('input', cart, $event)" />
-          <button (click)="handleQuantity('plus', cart)">+</button>
-        </li>
-        <li>
-          <button class="form-button" (click)="removeToCart(cart.id)">Remove to cart</button>
-        </li>
-      </ul>
+
+      <div *ngFor="let cart of cartData" class="container-cart">
+
+        <div class="columns-cart">
+          <img src="{{ cart.image }}" alt="Image of the product">
+        </div>
+
+        <div class="columns-cart">
+          <div>
+            <span class="fw-bold h6">{{ cart.name }}</span>
+            <br>
+            <span>Precio: {{ cart.price | currency }}</span>
+          </div>
+
+          <div class="info">
+            <h4 class="quantity-h">Cantidad</h4>
+            <button (click)="handleQuantity('min', cart)">-</button>
+            <input class="text-center" type="number" [(ngModel)]="cart.quantity" (ngModelChange)="handleQuantity('input', cart, $event)" />
+            <button (click)="handleQuantity('plus', cart)">+</button>
+            <button class="form-button remove-button" (click)="removeToCart(cart.id)">Quitar</button>
+          </div>
+
+        </div>
+
+
+      </div>
+
+
     </div>
+
+
     <div class="col-sm-4 summary">
-      <h3>Summary</h3>
+      <h3>Resumen</h3>
       <ul>
-        <li><span>Amount</span><span>{{ priceSummary.price }}</span></li>
-        <li><span>Tax</span><span>{{ priceSummary.tax }}</span></li>
-        <li><span>Delivery</span><span>{{ priceSummary.delivery }}</span></li>
-        <li><span>Discount</span><span>{{ priceSummary.discount }}</span></li>
-        <li><span><h4>Total</h4></span><span><h4>{{ priceSummary.total }}</h4></span></li>
+        <li><span>Subtotal</span><span>${{ priceSummary.price }}</span></li>
+        <li><span>Tax</span><span>${{ priceSummary.tax }}</span></li>
+        <li><span>Envio</span><span>${{ priceSummary.delivery }}</span></li>
+        <li><span>Ahorro</span><span>${{ priceSummary.discount }}</span></li>
+        <li><span><h4  class="fw-bold">Total</h4></span><span><h4  class="fw-bold">${{ priceSummary.total }}</h4></span></li>
         <button class="form-button max-width" (click)="checkout()">Checkout</button>
       </ul>
     </div>

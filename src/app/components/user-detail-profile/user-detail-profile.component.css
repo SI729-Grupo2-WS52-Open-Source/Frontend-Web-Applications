@@ -109,6 +109,11 @@ input[type="text"] {
   justify-content: flex-end;
 }
 
+.edit-data:hover {
+  cursor: pointer;
+  color: rgba(170,29,29,1)
+}
+
 .disabled {
   pointer-events: none;
 }
@@ -189,6 +194,11 @@ input[type="text"] {
   background-color: white;
 }
 
+.buttonStyle:hover{
+  cursor: pointer;
+  color: rgba(170,29,29,1)
+}
+
 
 @media (max-width: 600px) {
   .profile-container {
@@ -208,5 +218,25 @@ input[type="text"] {
   .form-button-close{
     display: flex;
     flex-direction: column;
+  }
+}
+
+
+/*NUEVO*/
+.profile-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.profile-box {
+  flex-basis: 48%;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .profile-box {
+    flex-basis: 100%; /* En pantallas más pequeñas, ocupan todo el ancho */
+    margin: 1rem;
   }
 }

@@ -17,7 +17,7 @@ import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { UserDetailProfileComponent } from './components/user-detail-profile/user-detail-profile.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { SuccessfulBuyingComponent } from './components/successful-buying/successful-buying.component';
-import {MaterialModule} from "../shared/material.module";
+import {MaterialModule} from "./shared/material.module";
 
 @NgModule({
   declarations: [

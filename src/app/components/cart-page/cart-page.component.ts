@@ -22,9 +22,9 @@ export class CartPageComponent implements OnInit {
   totalPrice: number = 0;
 
   constructor(
-      private product: ProductService,
-      private router: Router,
-      private quantityService: QuantityService
+    private product: ProductService,
+    private router: Router,
+    private quantityService: QuantityService
   ) {}
 
   ngOnInit() {
@@ -95,4 +95,5 @@ export class CartPageComponent implements OnInit {
     this.resetQuantity();
     this.router.navigate(['/checkout']);
   }
+
 }

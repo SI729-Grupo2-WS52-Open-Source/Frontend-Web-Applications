@@ -1,97 +1,112 @@
-h1, *{
+h1, h2, h3, h4, * {
   font-family: 'Montserrat', sans-serif;
 }
-.form-button{
+h2, h3 {
+  padding: 0;
+  margin: 0;
+}
+
+/* Botones */
+.form-button {
   border: none;
   cursor: pointer;
   background-color: #AA1D1D;
   color: white;
   border-radius: 25px;
   height: 50px;
-  border-collapse: collapse;
+  width: 100%;
 }
 
-.removeButton{
-  background-color: white;
-  color: #AA1D1D;
-  border: 3px solid #AA1D1D;
-  border-radius: 5px;
-}
-
-.removeButton:hover{
+.remove-button {
+  cursor: pointer;
   background-color: #AA1D1D;
-  color: white;
-  border: 3px solid #AA1D1D;
-  border-radius: 5px;
-}
-
-.checkButton{
-  background-color: white;
-  color: #AA1D1D;
-  border: 3px solid #AA1D1D;
-  border-radius: 35px;
-}
-
-.checkButton:hover{
-  background-color: #AA1D1D;
-  color: white;
-  border: none;
-  border-radius: 35px;
-}
-
-.cart-page{
-  margin-top: 40px;
-  margin-bottom: 60px;
+  border-radius: 1rem;
+  height: 3rem;
+  width: 5rem;
+  margin-left: 1rem;
 
 }
 
-.cart-page h1{
+.remove-button:hover, .form-button:hover  {
+  background-color: #7a1616;
+}
+
+/* Carrito */
+.cart-page {
+  margin: 5rem 3rem;
+}
+
+.cart-page h1 {
   text-align: center;
-  font-size: 35px;
-  font-weight: bolder;
-  margin-bottom: 50px;
+  font-size: 2.2rem;
+  font-weight: bold;
 }
 
-.details img{
-  height: 100px;
+
+.details img {
+  height: 7rem;
+  width: 7rem;
+  object-fit: cover;
+  border-radius: 0.7rem;
+
 }
 
-.details ul{
-  justify-content: space-between;
-  align-items: center;
-  padding: 0;
-  margin: 0;
+.details .container-cart {
   display: flex;
-  list-style-type: none;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 15px;
+  padding-bottom: 4rem;
+  align-items: center;
 }
 
-.details{
-  border: 1px solid #ddd;
+.details .columns-cart {
+  padding-right: 2rem;
+
 }
 
-.summary{
+.details .info {
+  display: flex;
+  padding-top: 1rem;
+  align-items: center;
+}
+
+.details .quantity-h {
+  margin-right: 0.7rem;
+  margin-top: 0.7rem;
+}
+
+.details input {
+  width: 3rem;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+
+
+/*Resumen de Compra*/
+.summary {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.summary h3{
+.summary h3 {
   text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
-.summary ul{
+.summary ul {
   list-style-type: none;
-  padding: 5%;
-  border: 1px solid #ddd;
+  padding: 0;
 }
 
-.summary ul li{
+.summary ul li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.max-width{
+.max-width {
   width: 100%;
 }
