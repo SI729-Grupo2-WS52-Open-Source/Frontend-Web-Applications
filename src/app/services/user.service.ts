@@ -12,7 +12,7 @@ export class UserService {
   constructor(private http: HttpClient, private router: Router) { }
 
   userSignUp(user: SignUp){
-    this.http.post("http://localhost:3000/users", user, {observe: 'response'})
+    this.http.post("https://akira.ngrok.app/users", user, {observe: 'response'})
       .subscribe((result) => {
         console.warn(result);
         if (result){
@@ -23,7 +23,7 @@ export class UserService {
   }
 
   userLogin(data: login){
-    this.http.get<SignUp[]>(`http://localhost:3000/users?email=${data.email}&password=${data.password}`,
+    this.http.get<SignUp[]>(`https://akira.ngrok.app/users?email=${data.email}&password=${data.password}`,
       {observe: 'response'})
       .subscribe((result) => {
         if (result && result.body?.length){
@@ -42,6 +42,6 @@ export class UserService {
   }
 
   getUserProfile(payment: string) {
-    return this.http.get<SignUp>(`http://localhost:3000/users/${payment}`);
+    return this.http.get<SignUp>(`https://akira.ngrok.app/users/${payment}`);
   }
 }
