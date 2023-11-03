@@ -1,126 +1,148 @@
-import {EventEmitter, Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {cart, order, product} from "../models/data-model";
+import { EventEmitter, Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { cart, order, product } from "../models/data-model";
+import { environment } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
   cartData = new EventEmitter<product[] | []>();
-  constructor(private http: HttpClient) { }
+  baseURL = environment.baseURL; // Variable para la URL base
+
+  constructor(private http: HttpClient) {
+  }
 
   getPopularAnimeProducts() {
-    return this.http.get<product[]>('https://akira.ngrok.app/products?_limit=10&category=Anime');
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.get<product[]>(`${this.baseURL}/products?_limit=10&category=Anime`, {headers});
   }
 
-  // Obtener productos populares de la categoría KPOP
-  getPopularKpopProducts(){
-    return this.http.get<product[]>('https://akira.ngrok.app/products?_limit=10&category=KPOP');
+  getPopularKpopProducts() {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.get<product[]>(`${this.baseURL}/products?_limit=10&category=KPOP`, {headers});
   }
 
-  // Obtener productos populares de la categoría Lectura
-  getPopularLecturaProducts(){
-    return this.http.get<product[]>('https://akira.ngrok.app/products?_limit=10&category=Lectura');
-  }
-  addProduct(data:product){
-    return this.http.post('https://akira.ngrok.app/products',data);
+  getPopularLecturaProducts() {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.get<product[]>(`${this.baseURL}/products?_limit=10&category=Lectura`, {headers});
   }
 
-  productList(){
-    return this.http.get<product[]>('https://akira.ngrok.app/products');
+  addProduct(data: product) {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.post(`${this.baseURL}/products`, data, {headers});
   }
 
-  deleteProduct(id: number){
-    return this.http.delete(`https://akira.ngrok.app/products/${id}`);
+  productList() {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.get<product[]>(`${this.baseURL}/products`, {headers});
   }
 
-  getProduct(id: string){
-      return this.http.get<product>(`https://akira.ngrok.app/products/${id}`);
+  deleteProduct(id: number) {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.delete(`${this.baseURL}/products/${id}`, {headers});
   }
 
-  updateProduct(product: product){
-    return this.http.put<product>(`https://akira.ngrok.app/products/${product.id}`, product);
+  getProduct(id: string) {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.get<product>(`${this.baseURL}/products/${id}`, {headers});
   }
 
-  popularProducts(){
-    return this.http.get<product[]>('https://akira.ngrok.app/products?_limit=6');
+  updateProduct(product: product) {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.put<product>(`${this.baseURL}/products/${product.id}`, product, {headers});
   }
 
-  trendyProducts(){
-    return this.http.get<product[]>('https://akira.ngrok.app/products?_limit=6');
+  popularProducts() {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.get<product[]>(`${this.baseURL}/products?_limit=6`, {headers});
   }
 
-  searchProducts(query: string){
-      return this.http.get<product[]>(`https://akira.ngrok.app/products?q=${query}`);
+  trendyProducts() {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.get<product[]>(`${this.baseURL}/products?_limit=6`, {headers});
   }
 
-  localAddToCart(data: product){
+  searchProducts(query: string) {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.get<product[]>(`${this.baseURL}/products?q=${query}`, {headers});
+  }
+
+  localAddToCart(data: product) {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
     let cartData = [];
     let localCart = localStorage.getItem('localCart');
-    if (!localCart){
+    if (!localCart) {
       localStorage.setItem('localCart', JSON.stringify([data]));
       this.cartData.emit([data]);
-    }else {
-      cartData=JSON.parse(localCart);
+    } else {
+      cartData = JSON.parse(localCart);
       cartData.push(data);
       localStorage.setItem('localCart', JSON.stringify(cartData));
     }
     this.cartData.emit(cartData);
   }
-  removeItemFromCart(productId: number){
+
+  removeItemFromCart(productId: number) {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
     let cartData = localStorage.getItem('localCart');
-    if (cartData){
+    if (cartData) {
       let items: product[] = JSON.parse(cartData);
-      items = items.filter((item: product) => productId!==item.id);
-        localStorage.setItem('localCart', JSON.stringify(items));
-        this.cartData.emit(items);
+      items = items.filter((item: product) => productId !== item.id);
+      localStorage.setItem('localCart', JSON.stringify(items));
+      this.cartData.emit(items);
     }
   }
 
-  addToCart(cartData: cart){
-    return this.http.post('https://akira.ngrok.app/cart',cartData);
+  addToCart(cartData: cart) {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.post(`${this.baseURL}/cart`, cartData, { headers });
   }
 
-  getCartList(userId: number){
-    this.http.get<product[]>(`https://akira.ngrok.app/cart?userId=`+userId,
-      {observe: 'response'}).subscribe((result) => {
-        console.warn(result);
-        if (result && result.body){
-          this.cartData.emit(result.body);
-        }
-    })
+  getCartList(userId: number) {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    this.http.get<product[]>(`${this.baseURL}/cart?userId=` + userId, { headers , observe: 'response'}).subscribe((result) => {
+      console.warn(result);
+      if (result && result.body) {
+        this.cartData.emit(result.body);
+      }
+    });
+  }
+  removeToCart(cartId: number) {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.delete(`${this.baseURL}/cart/` + cartId, { headers });
   }
 
-  removeToCart(cartId: number){
-    return this.http.delete('https://akira.ngrok.app/cart/' + cartId);
-  }
-
-  currentCart(){
+  currentCart() {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
     let userStore = localStorage.getItem('user');
     let userData = userStore && JSON.parse(userStore);
-    return this.http.get<cart[]>('https://akira.ngrok.app/cart?userId='+userData.id);
+    return this.http.get<cart[]>(`${this.baseURL}/cart?userId=` + userData.id, { headers });
   }
 
-  orderNow(data: order){
-      return this.http.post('hhttps://akira.ngrok.app/orders',data);
+  orderNow(data: order) {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.post(`${this.baseURL}/orders`, data, { headers });
   }
 
-  orderList(){
+  orderList() {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
     let userStore = localStorage.getItem('user');
     let userData = userStore && JSON.parse(userStore);
-    return this.http.get<order[]>('https://akira.ngrok.app/orders?userId=' + userData.id);
-
+    return this.http.get<order[]>(`${this.baseURL}/orders?userId=` + userData.id, { headers });
   }
-
 
   deleteCartItems(cartId: number) {
-    return this.http.delete('https://akira.ngrok.app/cart/' + cartId).subscribe((result) => {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.delete(`${this.baseURL}/cart/` + cartId, { headers }).subscribe((result) => {
       this.cartData.emit([]);
-    })
-  }
-  cancelOrder(orderId: number){
-    return this.http.delete('https://akira.ngrok.app/orders/' + orderId);
+    });
   }
 
-
+  cancelOrder(orderId: number) {
+    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+    return this.http.delete(`${this.baseURL}/orders/` + orderId, { headers });
+  }
 }
+
