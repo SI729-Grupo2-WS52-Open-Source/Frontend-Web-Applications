@@ -16,8 +16,7 @@ export class AdminService {
   constructor(private http: HttpClient, private router: Router) {}
 
   userSignUp(data: SignUp): void {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    this.http.post(`${this.baseURL}/admin`, data, { headers, observe: 'response' }).subscribe((result) => {
+    this.http.post(`${this.baseURL}/admin`, data, { observe: 'response' }).subscribe((result) => {
       this.isAdminLoggedIn.next(true);
       localStorage.setItem('admin', JSON.stringify(result.body));
       this.router.navigate(['admin-home']);
@@ -33,8 +32,7 @@ export class AdminService {
 
   userLogin(data: login) {
     console.warn(data);
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    this.http.get(`${this.baseURL}/admin?email=${data.email}&password=${data.password}`, { headers, observe: 'response' }).subscribe((result: any) => {
+    this.http.get(`${this.baseURL}/admin?email=${data.email}&password=${data.password}`, { observe: 'response' }).subscribe((result: any) => {
       console.warn(result);
       if (result && result.body && result.body.length) {
         console.warn("user logged in");

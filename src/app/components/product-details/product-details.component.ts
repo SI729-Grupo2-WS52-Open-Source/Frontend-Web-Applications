@@ -31,11 +31,7 @@ export class ProductDetailsComponent {
       if (productId && cartData) {
         let items = JSON.parse(cartData);
         items = items.filter((item: product) => productId == item.id.toString());
-        if (items.length) {
-          this.removeCart = true;
-        } else {
-          this.removeCart = false;
-        }
+        this.removeCart = !!items.length;
       }
 
       let user = localStorage.getItem('user');
@@ -97,6 +93,7 @@ export class ProductDetailsComponent {
   }
   removeToCart(productId: number){
     if (!localStorage.getItem('user')){
+      console.log(productId);
       this.product.removeItemFromCart(productId);
 
     }else {
@@ -111,4 +108,5 @@ export class ProductDetailsComponent {
       this.removeCart = false;
     }
   }
+
 }
