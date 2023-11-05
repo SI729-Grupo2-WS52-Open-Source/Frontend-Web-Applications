@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  baseURL: 'https://content-bug-crisp.ngrok-free.app'
+  baseURL: 'http://20.55.32.254:8080'
 };
 
 

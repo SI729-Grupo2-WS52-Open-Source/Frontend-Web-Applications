@@ -53,7 +53,7 @@ export class HeaderComponent {
       this.cartItems = JSON.parse(cartData).length;
     }
     this.product.cartData.subscribe((items) => {
-        this.cartItems = items.length;
+      this.cartItems = items.length;
 
     })
   }
@@ -68,15 +68,15 @@ export class HeaderComponent {
     this.product.cartData.emit([]);
   }
   searchProduct(query: KeyboardEvent){
-      if (query){
-        const element = query.target as HTMLInputElement;
-        this.product.searchProducts(element.value).subscribe((result) => {
-            if (result.length > 5){
-              result.length = 5;
-            }
-          this.searchResult= result;
-        })
-      }
+    if (query){
+      const element = query.target as HTMLInputElement;
+      this.product.searchProducts(element.value).subscribe((result) => {
+        if (result.length > 5){
+          result.length = 5;
+        }
+        this.searchResult= result;
+      })
+    }
   }
 
   hideSearch(){

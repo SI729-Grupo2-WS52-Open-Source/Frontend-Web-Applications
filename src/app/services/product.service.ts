@@ -2,6 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { cart, order, product } from "../models/data-model";
 import { environment } from '../../environments/environment';
+import {Observable, throwError} from "rxjs";
 
 
 @Injectable({
@@ -15,64 +16,52 @@ export class ProductService {
   }
 
   getPopularAnimeProducts() {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.get<product[]>(`${this.baseURL}/products?_limit=10&category=Anime`, {headers});
+    return this.http.get<product[]>(`${this.baseURL}/products/popular/anime`);
   }
 
   getPopularKpopProducts() {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.get<product[]>(`${this.baseURL}/products?_limit=10&category=KPOP`, {headers});
+    return this.http.get<product[]>(`${this.baseURL}/products/popular/kpop`);
   }
 
   getPopularLecturaProducts() {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.get<product[]>(`${this.baseURL}/products?_limit=10&category=Lectura`, {headers});
+    return this.http.get<product[]>(`${this.baseURL}/products/popular/lectura`);
   }
 
   addProduct(data: product) {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.post(`${this.baseURL}/products`, data, {headers});
+    return this.http.post(`${this.baseURL}/products`, data);
   }
 
   productList() {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.get<product[]>(`${this.baseURL}/products`, {headers});
+    return this.http.get<product[]>(`${this.baseURL}/products`);
   }
 
   deleteProduct(id: number) {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.delete(`${this.baseURL}/products/${id}`, {headers});
+    return this.http.delete(`${this.baseURL}/products/${id}`);
   }
 
   getProduct(id: string) {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.get<product>(`${this.baseURL}/products/${id}`, {headers});
+    return this.http.get<product>(`${this.baseURL}/products/${id}`);
   }
 
   updateProduct(product: product) {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.put<product>(`${this.baseURL}/products/${product.id}`, product, {headers});
+    return this.http.put<product>(`${this.baseURL}/products/${product.id}`, product);
   }
 
   popularProducts() {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.get<product[]>(`${this.baseURL}/products?_limit=6`, {headers});
+    return this.http.get<product[]>(`${this.baseURL}/products/popular`);
   }
 
   trendyProducts() {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.get<product[]>(`${this.baseURL}/products?_limit=6`, {headers});
+    return this.http.get<product[]>(`${this.baseURL}/products/popular`);
   }
 
   searchProducts(query: string) {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.get<product[]>(`${this.baseURL}/products?q=${query}`, {headers});
+    return this.http.get<product[]>(`${this.baseURL}/products/search?query=${query}`);
   }
 
   localAddToCart(data: product) {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
     let cartData = [];
-    let localCart = localStorage.getItem('localCart');
+    const localCart = localStorage.getItem('localCart');
     if (!localCart) {
       localStorage.setItem('localCart', JSON.stringify([data]));
       this.cartData.emit([data]);
@@ -85,8 +74,7 @@ export class ProductService {
   }
 
   removeItemFromCart(productId: number) {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    let cartData = localStorage.getItem('localCart');
+    const cartData = localStorage.getItem('localCart');
     if (cartData) {
       let items: product[] = JSON.parse(cartData);
       items = items.filter((item: product) => productId !== item.id);
@@ -96,53 +84,53 @@ export class ProductService {
   }
 
   addToCart(cartData: cart) {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.post(`${this.baseURL}/cart`, cartData, { headers });
+    return this.http.post(`${this.baseURL}/cart`, cartData);
   }
 
   getCartList(userId: number) {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    this.http.get<product[]>(`${this.baseURL}/cart?userId=` + userId, { headers , observe: 'response'}).subscribe((result) => {
-      console.warn(result);
-      if (result && result.body) {
-        this.cartData.emit(result.body);
-      }
-    });
+    const url = `${this.baseURL}/cart?userId=${userId}`;
+    this.http.get<product[]>(url).subscribe(
+        (result) => {
+          if (result && Array.isArray(result)) {
+            this.cartData.emit(result);
+          }
+        },
+        (error) => {
+          console.error('Error fetching cart data:', error);
+          // Aquí puedes manejar el error, emitir eventos o tomar acciones según lo necesario
+        }
+    );
   }
   removeToCart(cartId: number) {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.delete(`${this.baseURL}/cart/` + cartId, { headers });
+    return this.http.delete(`${this.baseURL}/cart/` + cartId);
   }
-
   currentCart() {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
     let userStore = localStorage.getItem('user');
     let userData = userStore && JSON.parse(userStore);
-    return this.http.get<cart[]>(`${this.baseURL}/cart?userId=` + userData.id, { headers });
+    return this.http.get<cart[]>(`${this.baseURL}/cart?userId=` + userData.id);
   }
 
   orderNow(data: order) {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.post(`${this.baseURL}/orders`, data, { headers });
+    return this.http.post(`${this.baseURL}/orders`, data);
   }
 
-  orderList() {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
+  orderList(){
     let userStore = localStorage.getItem('user');
     let userData = userStore && JSON.parse(userStore);
-    return this.http.get<order[]>(`${this.baseURL}/orders?userId=` + userData.id, { headers });
+    return this.http.get<order[]>(`${this.baseURL}/orders?userId=` + userData.id);
+
   }
 
   deleteCartItems(cartId: number) {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.delete(`${this.baseURL}/cart/` + cartId, { headers }).subscribe((result) => {
+    return this.http.delete(`${this.baseURL}/cart/` + cartId ).subscribe((result) => {
       this.cartData.emit([]);
     });
   }
 
   cancelOrder(orderId: number) {
-    const headers = new HttpHeaders().set('ngrok-skip-browser-warning', 'true');
-    return this.http.delete(`${this.baseURL}/orders/` + orderId, { headers });
+    return this.http.delete(`${this.baseURL}/orders/` + orderId);
   }
+
+
 }
 
