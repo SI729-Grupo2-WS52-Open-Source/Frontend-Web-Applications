@@ -70,34 +70,37 @@ export class UserDetailProfileComponent implements OnInit {
 
             this.idShipping = this.userId;
             this.updateShippingData();
+          console.log('ID de envío después de getUserFromStorage:', this.idShipping);
+
         }
     }
 
     updateShippingData() {
+        console.log('ID de envío antes de getUserFromStorage:', this.idShipping);
+        this.idShipping = this.userId;
+        console.log('ID de envío después de getUserFromStorage:', this.idShipping);
+
         if (this.idShipping) {
-            this.http.get(`${this.baseURL}/shipping/${this.idShipping}`).subscribe((response: any) => {
-                if (response) {
-                    if (this.addressInput.nativeElement) {
-                        this.addressInput.nativeElement.value = response.address;
+            this.http.get(`${this.baseURL}/shipping/${this.idShipping}`).subscribe(
+                (response: any) => {
+                    if (response) {
+                        console.log('Datos de envío recibidos:', response);
+                        this.savedAddress = response.address;
+                        this.savedDistrict = response.district;
+                        this.savedProvince = response.province;
+                        this.savedPaymentMethod = response.paymentMethod;
+                        this.savedLinkedCard = response.linkedCard;
                     }
-                    if (this.districtInput.nativeElement) {
-                        this.districtInput.nativeElement.value = response.district;
-                    }
-                    if (this.provinceInput.nativeElement) {
-                        this.provinceInput.nativeElement.value = response.province;
-                    }
-                    if (this.paymentMethodInput.nativeElement) {
-                        this.paymentMethodInput.nativeElement.value = response.paymentMethod;
-                    }
-                    if (this.linkedCardInput.nativeElement) {
-                        this.linkedCardInput.nativeElement.value = response.linkedCard;
-                    }
+                },
+                error => {
+                    console.error('Error al obtener datos de envío', error);
                 }
-            });
+            );
         } else {
             console.log('ID de envío no válido');
         }
     }
+
 
     saveShippingData() {
         this.idShipping = this.userId;
