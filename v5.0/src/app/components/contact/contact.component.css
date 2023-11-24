@@ -1,0 +1,37 @@
+h2{
+  font-size: 35px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+h4{
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container-text{
+  margin-top: 10px;
+}
+.contact-container{
+  margin: 10%;
+}
+
+.contact-img img{
+  height: 300px;
+}
+
+.socialmedia:hover  {
+  color: rgba(170,29,29,1);
+  cursor: pointer;
+
+}
+
+.icon-column fa-icon {
+  margin-top: 7px;
+}
+

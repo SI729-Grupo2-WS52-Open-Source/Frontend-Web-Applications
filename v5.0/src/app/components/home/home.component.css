@@ -1,0 +1,147 @@
+h2,h3,h4 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*CARRUSEL------------------------------------------------------------------------------------------------------------------*/
+
+.product-header-img{
+  object-fit: cover;
+  object-position: center;
+  height: 45rem;
+  width: 100%;
+}
+
+.carousel-caption{
+  background-color: #00000082;
+  border-radius: 5px;
+  width: 100%;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.carousel-caption h3{
+  margin: 50px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  background-color: black;
+  border: 5px;
+}
+
+/*FIN DE CARRUSEL------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/*Productos------------------------------------------------------------------------------------------------------------------*/
+
+
+
+.product-list-wrapper{
+  margin: 0 80px; /*no tener margin 0 a los lados ocacionaba el error*/
+}
+
+
+
+.container-section{
+  margin: 2rem 0;
+}
+
+.seccionescontainer {
+  margin: 10rem 0;
+
+}
+
+
+.product-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+.product-item img {
+  cursor: pointer;
+  width: 100%;
+  object-fit: contain;
+}
+
+
+
+/*Del hover--------------------------*/
+
+.product-item .hover-caption h3 {
+  font-size: 1.5vw;
+  line-height: 2.2vw;
+}
+
+.hover-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-effect:hover img {
+  filter: brightness(0.35);
+  width: 20vw;
+  height: 30vh;
+}
+
+.hover-effect img {
+  transition: transform 2s ease, filter 0.2s ease;
+  margin-bottom: 2rem;
+  width: 20vw;
+  height: 30vh;
+  object-fit: cover;
+  object-position: top;
+}
+
+.hover-caption {
+  position: absolute;
+  text-align: center;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-item:hover .hover-caption {
+  opacity: 1;
+}
+
+.product-item .name-head{
+  text-align: left;
+  font-size: 20px;
+}
+
+.product-footer{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@media only screen and (max-width: 575px){
+
+  .product-item .hover-caption h3 {
+    font-size: 6vw;
+    line-height: 8vw;
+  }
+
+  .hover-effect:hover img {
+    width: 80vw; /*esto para que en celular se vea menos flaquito*/
+    height: 50vh;
+  }
+
+  .hover-effect img {
+    width: 80vw;
+    height: 50vh;
+  }
+}

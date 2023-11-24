@@ -1,0 +1,175 @@
+/*AGREGUE ESTO-----------------------------------------------*/
+.footerprueba {
+  background-color: #141414;
+  color: #fff;
+
+}
+
+.footerprueba ul {
+  background-color: #2c2c2c;
+  color: #fff;
+  list-style-type: none;
+  padding: 0;
+
+}
+
+.footerprueba ul li {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+.footerprueba ul li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+
+}
+
+.footerprueba ul li a:hover {
+  color: #f24236;
+
+}
+
+.custom-header {
+  background-color: #141414;
+  color: #fff;
+  padding: 2rem 3.5rem;
+  margin-bottom: 0.1rem;
+}
+
+
+mat-panel-title {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+mat-panel-title:hover {
+  color: #b41a1a;
+}
+
+
+mat-panel-title {
+
+}
+
+  .mat-expansion-panel-header.mat-expanded::ng-deep .mat-content {
+  background-color: #2c2c2c;
+
+}
+
+.mat-expansion-panel-header.mat-expanded::ng-deep .mat-content:hover {
+  background-color: #2c2c2c;
+}
+
+
+.custom-panel {
+  background-color: #2c2c2c;
+  border-radius: 0;
+}
+
+
+.custom-header:hover {
+  background-color: #f24236;
+
+}
+
+.custom-header.mat-expanded {
+  background-color: #2c2c2c;
+
+}
+
+.custom-header.mat-expanded:hover {
+  background-color: #2c2c2c;
+
+}
+
+
+
+
+
+
+
+/*AGREGUE ESTO-----------------------------------------------*/
+
+
+
+
+
+
+
+
+.footer-column {
+  flex: 1;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 20px;
+
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+
+}
+
+.footer ul li {
+  margin-bottom: 5px;
+  color: #ccc;
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.logo {
+  width: auto;
+  max-height: 8rem;
+  display: block;
+  margin-left: 2.5rem;
+
+}
+
+#footer-container {
+  background-color: #141414;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+#metodos a img {
+  max-width: 50%;
+  margin-right: 100px;
+  display: block;
+}
+
+#copyright {
+  margin: 4vw 3rem 0.2rem 3rem;
+  font-size: 1.1rem;
+  font-weight: normal;
+  text-align: right;
+}
+
+#metodos a img {
+  margin: 0rem 3rem;
+  max-width: 79%;
+  float: right;
+
+}
+
+
+@media (max-width: 768px) {
+  #copyright {
+    margin: 7vw 3rem 0.2rem 3rem;
+  }
+
+}

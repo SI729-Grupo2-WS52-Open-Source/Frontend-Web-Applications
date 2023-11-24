@@ -1,0 +1,43 @@
+<div class="search-container">
+  <div class="row">
+    <div class="filter-container">
+
+
+      <label for="categoryFilter">Filtrar por Categoría: </label>
+      <select id="categoryFilter" [(ngModel)]="selectedCategory" (change)="filterResultsByCategory(selectedCategory)">
+
+        <option value="">Todas las categorias</option>
+        <option value="K-POP">K-POP</option>
+        <option value="Anime">Anime</option>
+        <option value="Lectura">Lectura</option>
+      </select>
+
+      <div class="filter-container" *ngIf="selectedCategory">
+        <label for="subcategoryFilter">Filtrar por: </label>
+        <select id="subcategoryFilter" [(ngModel)]="selectedSubcategory" (change)="filterResultsBySubcategory(selectedSubcategory)">
+          <option value="">Todas las Categorías</option>
+          <option *ngFor="let subcategory of getSubcategories(selectedCategory)" [value]="subcategory">{{ subcategory }}</option>
+        </select>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="search-results">
+    <div class="search-item" *ngFor="let item of searchResult">
+      <div class="col-sm-3">
+        <a routerLink="/details/{{item.id}}">
+          <img src="{{item.image}}" alt="">
+        </a>
+      </div>
+      <div class="col-sm-8 details">
+        <h6><a routerLink="/details/{{item.id}}" class="details-link">{{item.name}}</a></h6>
+        <p><b>Price: {{item.price}} </b></p>
+        <p><span>Color: {{item.color}} </span><span>Category: {{item.category}}</span></p>
+        <p>{{item.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

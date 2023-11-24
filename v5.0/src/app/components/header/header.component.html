@@ -1,0 +1,120 @@
+<nav class="nav" style="width: 100%;">
+
+  <div class="up-row">
+
+    <div class="logo">
+      <fa-icon [icon]="icon" class="icon-bar" (click)="toggleCategoryMenu()"></fa-icon>
+      <h1><a routerLink="/"><img src="assets/img/Akira.png" alt="Logo Akira"></a></h1>
+      <div class="category-menu" *ngIf="isCategoryMenuVisible">
+
+        <ul class="category-list" [ngClass]="{'slide-in-left': isCategoryMenuVisible}">
+          <fa-icon class="close-button" (click)="closeCategoryMenu()" [icon]="iconClose"></fa-icon>
+          <br>
+          <h2 style="color: black; font-size: 24px; margin-left: 20px; margin-top: 20px; font-weight: bold;">Categorías:</h2>
+
+          <!-- Lista desplegable de categorías K-POP -->
+          <li>
+            <a href="#" (click)="toggleSubmenu('kpop')" [class.active]="isSubmenuVisible['kpop']">K-POP</a>
+          </li>
+          <div class="submenu" [class.active]="isSubmenuVisible['kpop']">
+            <li (click)="closeCategoryMenu()"><a href="#">Girl Groups</a></li>
+            <li (click)="closeCategoryMenu()"><a href="#">Boy Groups</a></li>
+          </div>
+
+          <!-- Lista desplegable de categorías ANIME -->
+          <li>
+            <a href="#" (click)="toggleSubmenu('anime')" [class.active]="isSubmenuVisible['anime']">ANIME</a>
+          </li>
+          <div class="submenu" [class.active]="isSubmenuVisible['anime']">
+            <li (click)="closeCategoryMenu()"><a href="#">Figuras</a></li>
+            <li (click)="closeCategoryMenu()"><a href="#">Chibis</a></li>
+          </div>
+
+          <!-- Lista desplegable de categorías LECTURA -->
+          <li>
+            <a href="#" (click)="toggleSubmenu('lectura')" [class.active]="isSubmenuVisible['lectura']">LECTURA</a>
+          </li>
+          <div class="submenu" [class.active]="isSubmenuVisible['lectura']">
+            <li (click)="closeCategoryMenu()"><a href="#">Mangas</a></li>
+            <li (click)="closeCategoryMenu()"><a href="#">Manhuas</a></li>
+          </div>
+
+          <li (click)="closeCategoryMenu()"><a>NUEVOS INGRESOS</a></li>
+          <li (click)="closeCategoryMenu()"><a routerLink="contact">Contáctanos</a></li>
+        </ul>
+
+
+      </div>
+    </div>
+
+
+    <div [ngSwitch]="menuType" class="all-headerText">
+      <ul *ngSwitchCase="'default'">
+        <!--<li><a routerLink="admin-auth">Admin</a></li>-->
+        <div class="all-default">
+          <li class="cart-link">
+            <a mat-button>
+              <fa-icon [icon]="faShoppingCart" class="fa-2x"></fa-icon>
+              <span class="cart-badge" matBadge="{{cartItems}}" matBadgeColor="warn"></span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/user-auth">
+              <fa-icon [icon]="iconProfile" class="fa-2x"></fa-icon>
+            </a>
+          </li>
+        </div>
+      </ul>
+      <ul *ngSwitchCase="'user'" class="user-menu">
+        <li class="cart-link">
+          <a [routerLink]="cartItems > 0 ? 'cart-page' : null" mat-button>
+            <fa-icon [icon]="faShoppingCart" class="fa-2x"></fa-icon>
+            <span class="cart-badge" matBadge="{{cartItems}}" matBadgeColor="warn"></span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/user-profile">
+            <fa-icon [icon]="iconProfile" class="fa-2x"></fa-icon>
+          </a>
+        </li>
+      </ul>
+      <ul *ngSwitchCase="'admin'">
+        <li><a routerLink="/admin-home">Product List</a></li>
+        <li><a routerLink="admin-add-product">Add Products</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+        <li><a href="">{{adminName | titlecase}}</a></li>
+      </ul>
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+  <div class="down-row">
+
+    <div *ngIf="menuType!=='admin'" class="nav-search">
+
+
+      <div class="search-container">
+        <input type="text" #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()"
+               placeholder="Search Products">
+        <span class="icon-container">
+        <fa-icon [icon]="iconSearch" (click)="submitSearch(searchInput.value)" class="icon-search"></fa-icon>
+      </span>
+      </div>
+
+      <ul class="suggested-result" *ngIf="searchResult">
+        <li *ngFor="let item of searchResult">
+          <a (mousedown)="redirectToDetails(item.id)">{{item.name}}</a>
+        </li>
+      </ul>
+
+
+    </div>
+  </div>
+</nav>
+
