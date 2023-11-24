@@ -1,0 +1,65 @@
+<nav class="nav">
+  <div class="logo">
+    <fa-icon [icon]="icon" class="icon-bar"></fa-icon>
+    <h1><a routerLink="/"><img src="assets/img/Akira.png" alt="Logo Akira"></a></h1>
+  </div>
+
+  <div *ngIf="menuType!=='admin'" class="nav-search">
+    <div class="search-container">
+      <input type="text" #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="Search Products">
+      <span class="icon-container">
+        <fa-icon [icon]="iconSearch" (click)="submitSearch(searchInput.value)" class="icon-search"></fa-icon>
+      </span>
+    </div>
+
+    <ul class="suggested-result" *ngIf="searchResult">
+      <li *ngFor="let item of searchResult">
+        <a (mousedown)="redirectToDetails(item.id)">{{item.name}}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div [ngSwitch]="menuType" class="all-headerText">
+    <ul *ngSwitchCase="'default'">
+      <li><a routerLink="admin-auth">Admin</a></li>
+      <li><a routerLink="">Home</a></li>
+      <li><a routerLink="/user-auth">Login/Sign-up</a></li>
+      <li>
+        <a routerLink="/user-auth">
+          <fa-icon [icon]="iconProfile" class="fa-2x"></fa-icon>
+        </a>
+      </li>
+      <li class="cart-link">
+        <a href="">
+          <fa-icon [icon]="faShoppingCart" class="fa-2x"></fa-icon>
+          <span class="cart-badge">{{cartItems}}</span>
+        </a>
+      </li>
+    </ul>
+
+    <ul *ngSwitchCase="'user'" class="user-menu">
+      <!--<li><a routerLink="admin-auth">Admin</a></li>-->
+      <li><a routerLink="">Home</a></li>
+      <!--<li><a routerLink="my-orders">My orders</a></li>-->
+      <li class="cart-link">
+        <a [routerLink]="cartItems>0?'cart-page': null">
+        <fa-icon [icon]="faShoppingCart" class="fa-2x"></fa-icon>
+          <span class="cart-badge">{{cartItems}}</span>
+      </a>
+      </li>
+      <li>
+        <a routerLink="/user-profile">
+          <fa-icon [icon]="iconProfile" class="fa-2x"></fa-icon>
+        </a>
+      </li>
+      <li><a (click)="userLogout()">Logout</a></li>
+    </ul>
+
+    <ul *ngSwitchCase="'admin'">
+      <li><a routerLink="/admin-home">Product List</a></li>
+      <li><a routerLink="admin-add-product">Add Products</a></li>
+      <li><a (click)="logout()">Logout</a></li>
+      <li><a href="">{{adminName | titlecase}}</a></li>
+    </ul>
+  </div>
+</nav>
