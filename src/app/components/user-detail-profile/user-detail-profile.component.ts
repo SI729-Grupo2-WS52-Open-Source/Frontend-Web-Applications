@@ -65,20 +65,18 @@ export class UserDetailProfileComponent implements OnInit {
             this.userNumberCellphone = userData.numberCellphone;
             this.userEmail = userData.email;
             this.userPassword = userData.password;
-            this.userId = userData.id;
+            this.userId = userData.userId;
             this.userPayment = userData.payment;
 
             this.idShipping = this.userId;
             this.updateShippingData();
-          console.log('ID de envío después de getUserFromStorage:', this.idShipping);
+
 
         }
     }
 
     updateShippingData() {
-        console.log('ID de envío antes de getUserFromStorage:', this.idShipping);
         this.idShipping = this.userId;
-        console.log('ID de envío después de getUserFromStorage:', this.idShipping);
 
         if (this.idShipping) {
             this.http.get(`${this.baseURL}/shipping/${this.idShipping}`).subscribe(

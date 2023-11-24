@@ -20,17 +20,20 @@ export class UserAuthComponent {
   signUp(data: SignUp){
     this.user.userSignUp(data);
   }
-  login(data: login){
+  login(data: login) {
     this.user.userLogin(data);
-    this.user.invalidUserAuth.subscribe((result) => {
-      console.warn("apple", result);
-      if (result){
-        this.authError="Please enter valid user details";
-      }else{
+
+    this.user.invalidUserAuth.subscribe((error) => {
+      console.warn("apple:", error);
+
+      if (error) {
+        this.authError = 'Please enter valid user details';
+      } else {
         this.localCartToRemoteCart();
       }
-    })
+    });
   }
+
   openSignUp(){
     this.showLogin = false;
   }
@@ -41,9 +44,11 @@ export class UserAuthComponent {
   localCartToRemoteCart() {
     let data = localStorage.getItem('localCart');
     let user = localStorage.getItem('user');
-    let userId = user && JSON.parse(user).id;
+    let userId = user && JSON.parse(user).userId;
 
-    if (data) {
+
+    if (data && userId) {
+
       let cartDataList: product[] = JSON.parse(data);
 
       cartDataList.forEach((product: product, index) => {
@@ -51,7 +56,6 @@ export class UserAuthComponent {
           ...product,
           productId: product.id,
           userId
-
         };
 
         setTimeout(() => {
@@ -66,11 +70,13 @@ export class UserAuthComponent {
           }
         }, 500);
       });
-    }
 
-    setTimeout(() => {
-      this.product.getCartList(userId);
-    }, 2000);
+      setTimeout(() => {
+        this.product.getCartList(userId);
+      }, 2000);
+    } else {
+      console.error("data o userIdString es null o undefined");
+    }
   }
 
 }

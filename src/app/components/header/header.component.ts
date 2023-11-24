@@ -40,7 +40,7 @@ export class HeaderComponent {
           let userData = userStore && JSON.parse(userStore);
           this.userName = userData.name;
           this.menuType='user';
-          this.product.getCartList(userData.id)
+          this.product.getCartList(userData.userId)
         } else {
           console.warn("outside admin");
           this.menuType='default';

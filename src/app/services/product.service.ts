@@ -106,8 +106,9 @@ export class ProductService {
   }
   currentCart() {
     let userStore = localStorage.getItem('user');
-    let userData = userStore && JSON.parse(userStore);
-    return this.http.get<cart[]>(`${this.baseURL}/cart?userId=` + userData.id);
+    let userId = userStore && JSON.parse(userStore).userId;
+
+    return this.http.get<cart[]>(`${this.baseURL}/cart?userId=` + userId);
   }
 
   orderNow(data: order) {
@@ -116,8 +117,8 @@ export class ProductService {
 
   orderList(){
     let userStore = localStorage.getItem('user');
-    let userData = userStore && JSON.parse(userStore);
-    return this.http.get<order[]>(`${this.baseURL}/orders?userId=` + userData.id);
+    let userData = userStore && JSON.parse(userStore).userId;
+    return this.http.get<order[]>(`${this.baseURL}/orders?userId=` + userData);
 
   }
 

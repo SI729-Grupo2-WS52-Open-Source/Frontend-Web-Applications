@@ -39,7 +39,6 @@ export class CartPageComponent implements OnInit {
     }
 
     removeToCart(cartId: number | undefined) {
-        console.log('El ID del carrito es:', cartId);
         if (cartId !== undefined) {
             this.product.removeToCart(cartId).subscribe((result) => {
                 this.loadDetails();

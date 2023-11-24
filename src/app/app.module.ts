@@ -18,6 +18,8 @@ import { UserDetailProfileComponent } from './components/user-detail-profile/use
 import { ContactComponent } from './components/contact/contact.component';
 import { SuccessfulBuyingComponent } from './components/successful-buying/successful-buying.component';
 import {MaterialModule} from "./shared/material.module";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {TokenInterceptor} from "./services/user.service";
 
 @NgModule({
   declarations: [
@@ -43,7 +45,11 @@ import {MaterialModule} from "./shared/material.module";
     MaterialModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

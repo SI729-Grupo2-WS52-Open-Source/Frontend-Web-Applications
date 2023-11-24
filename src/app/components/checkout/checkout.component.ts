@@ -52,7 +52,7 @@ export class CheckoutComponent implements OnInit {
 
     orderNow(data: { email: string, address: string, contact: string }) {
         let user = localStorage.getItem('user');
-        let userId = user && JSON.parse(user).id;
+        let userId = user && JSON.parse(user).userId;
         if (this.totalPrice) {
             let orderData: order = {
                 ...data,

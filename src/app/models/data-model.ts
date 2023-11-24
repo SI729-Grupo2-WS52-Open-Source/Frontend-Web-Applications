@@ -6,6 +6,7 @@ export interface SignUp{
   numberCellphone: string,
   payment: string,
   id: number
+
 }
 
 export interface login{
@@ -66,4 +67,8 @@ export interface shippingAddress {
   paymentMethod: string;
   linkedCard: string;
   id: string;
+}
+export interface LoginResponse {
+  user: SignUp[];
+  token: string;
 }
