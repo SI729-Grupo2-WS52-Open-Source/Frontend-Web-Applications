@@ -82,7 +82,6 @@ export class UserDetailProfileComponent implements OnInit {
             this.http.get(`${this.baseURL}/shipping/${this.idShipping}`).subscribe(
                 (response: any) => {
                     if (response) {
-                        console.log('Datos de envío recibidos:', response);
                         this.savedAddress = response.address;
                         this.savedDistrict = response.district;
                         this.savedProvince = response.province;
