@@ -2,24 +2,41 @@ import { Component, OnInit } from '@angular/core';
 import {cart, login, product, SignUp} from "../../models/data-model";
 import {UserService} from "../../services/user.service";
 import {ProductService} from "../../services/product.service";
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-user-auth',
   templateUrl: './user-auth.component.html',
   styleUrls: ['./user-auth.component.css']
 })
 export class UserAuthComponent {
+
   showLogin: boolean = true;
   authError: string = "";
-  constructor(private user: UserService, private product: ProductService) {
+  constructor(private user: UserService, private product: ProductService, private router: Router,
+  ) {
   }
 
   ngOnInit(){
     this.user.userAuthReload();
   }
 
-  signUp(data: SignUp){
+  signUp(data: SignUp) {
     this.user.userSignUp(data);
+
+    this.user.invalidUserAuth.subscribe((error) => {
+      console.warn("apple:", error);
+
+      if (error) {
+        this.authError = 'Please enter valid user details';
+      } else {
+        // Mover el redireccionamiento aquí
+        this.router.navigate(['/']).then(() => {
+        });
+      }
+    });
   }
+
+
   login(data: login) {
     this.user.userLogin(data);
 
@@ -74,9 +91,13 @@ export class UserAuthComponent {
       setTimeout(() => {
         this.product.getCartList(userId);
       }, 2000);
-    } else {
-      console.error("data o userIdString es null o undefined");
     }
   }
+
+  logoutAfterSignUp() {
+    localStorage.removeItem('user');
+    this.router.navigate(['/']);
+  }
+
 
 }

@@ -42,7 +42,7 @@ export class HeaderComponent {
           this.menuType='user';
           this.product.getCartList(userData.userId)
         } else {
-          console.warn("outside admin");
+          //console.warn("outside admin");
           this.menuType='default';
         }
       }

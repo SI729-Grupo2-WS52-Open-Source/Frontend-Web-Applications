@@ -5,7 +5,7 @@
       <div class="profile-image">
         <img src="https://i.pinimg.com/1200x/76/7e/67/767e674c17f8b705fd8fa5411081513d.jpg" alt="Imagen" class="logo">
       </div>
-      <h1>Hole, {{userName}}</h1>
+      <h1>Hola, {{userName}}</h1>
     </div>
 
     <div class="profile-content">
@@ -31,8 +31,7 @@
           <label>Correo: <input type="email" [(ngModel)]="userEmail" [readonly]="!editUserFields" class="custom-input"></label>
         </div>
         <div class="field">
-          <label>Contraseña: <input type="password" [(ngModel)]="userPassword" [readonly]="!editUserFields"
-                                    class="custom-input"></label>
+          <br>
         </div>
         <div class="field-button">
           <button (click)="saveUserData()" [disabled]="disableInputsUser">Actualizar</button>
@@ -75,11 +74,6 @@
 
   </div>
 </div>
-
-
-
-
-
 
 
 
