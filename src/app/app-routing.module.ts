@@ -15,6 +15,7 @@ import {MyOrdersComponent} from "./components/my-orders/my-orders.component";
 import {UserDetailProfileComponent} from "./components/user-detail-profile/user-detail-profile.component";
 import {ContactComponent} from "./components/contact/contact.component";
 import {SuccessfulBuyingComponent} from "./components/successful-buying/successful-buying.component";
+import {UpdatePasswordComponent} from "./components/update-password/update-password.component";
 
 const routes: Routes = [
   {
@@ -76,6 +77,10 @@ const routes: Routes = [
     path:'successful-buying',
     component: SuccessfulBuyingComponent,
   },
+  {
+    path:'update-password',
+    component: UpdatePasswordComponent,
+  }
 ];
 
 @NgModule({

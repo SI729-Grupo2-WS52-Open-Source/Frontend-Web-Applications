@@ -211,7 +211,9 @@ export class UserDetailProfileComponent implements OnInit {
         this.showEditData = !this.showEditData;
     }
 
-    hidePassword(password: string): string {
-        return password.replace(/./g, '*');
+    updatePassword(){
+      this.router.navigate(['/update-password']);
     }
+
+
 }

@@ -20,6 +20,8 @@ import { SuccessfulBuyingComponent } from './components/successful-buying/succes
 import {MaterialModule} from "./shared/material.module";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {TokenInterceptor} from "./services/user.service";
+import { UpdatePasswordComponent } from './components/update-password/update-password.component';
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -39,11 +41,13 @@ import {TokenInterceptor} from "./services/user.service";
     MyOrdersComponent,
     UserDetailProfileComponent,
     ContactComponent,
-    SuccessfulBuyingComponent
+    SuccessfulBuyingComponent,
+    UpdatePasswordComponent
   ],
   imports: [
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatInputModule
   ],
   providers: [    {
       provide: HTTP_INTERCEPTORS,

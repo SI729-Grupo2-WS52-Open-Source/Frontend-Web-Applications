@@ -112,7 +112,7 @@
           <label>Correo: {{userEmail}} </label>
         </div>
         <div class="field">
-          <label>Contraseña: {{ hidePassword(userPassword) }} </label>
+          <br>
         </div>
       </div>
       <div class="profile-box address-info firstthing">
@@ -189,6 +189,7 @@
     </div>
     <div>
       <button (click)="logout()" class="form-button-close"><p>Cerrar Sesión</p></button>
+      <button (click)="updatePassword()" class="form-button-close"><p>Actualizar Contraseña</p></button>
       <button (click)="deleteUserData()" class="form-button-close"><p>Eliminar cuenta</p></button>
     </div>
   </div>
