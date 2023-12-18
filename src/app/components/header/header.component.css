@@ -21,6 +21,17 @@ h1,h2, li{
   list-style: none;
 }
 
+.all-default{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+
+.all-default li {
+  font-size: 18px;
+}
 .user-menu li {
   font-size: 18px;
 }

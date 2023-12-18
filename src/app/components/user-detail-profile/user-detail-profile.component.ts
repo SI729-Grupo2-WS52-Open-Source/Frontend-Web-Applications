@@ -201,7 +201,7 @@ export class UserDetailProfileComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('user');
-    this.router.navigate(['/']);
+    this.router.navigate(['/user-auth']);
   }
 
   toggleEditData() {
