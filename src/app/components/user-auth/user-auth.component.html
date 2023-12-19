@@ -1,29 +1,29 @@
 <div class="user-auth">
   <div *ngIf="!showLogin" class="user-signup">
-    <h1>User Sign-up</h1>
+    <h1>Registrarse</h1>
     <form class="common-form" #userSignUp="ngForm" (ngSubmit)="signUp(userSignUp.value)">
       <input class="form-input"
              type="text"
-             placeholder="Enter User Name"
+             placeholder="Ingrese su nombre"
              name="name"
              ngModel
       >
 
       <input class="form-input"
              type="text"
-             placeholder="Enter User Surname"
+             placeholder="Ingrese su apellido"
              name="surname"
              ngModel
       >
       <input class="form-input"
              type="text"
-             placeholder="Enter User Email"
+             placeholder="Ingrese su email"
              name="email"
              ngModel
       >
       <input class="form-input"
              type="password"
-             placeholder="Enter User Password"
+             placeholder="Ingrese una contraseña"
              name="password"
              ngModel
 
@@ -31,7 +31,7 @@
 
       <input class="form-input"
              type="text"
-             placeholder="Enter User number"
+             placeholder="Ingrese su número telefónico"
              name="numberCellphone"
              ngModel
       >
@@ -41,12 +41,12 @@
         <option value="billetera_digital">Billetera Digital</option>
       </select>
 
-      <button class="form-button">Sign Up</button>
-      <p>¿Ya tienes cuenta? <a class="fw-bold" (click)="openLogin()">Iniciar Sesión</a></p>
+      <button class="form-button">Aceptar</button>
+      <p>¿Ya tienes una cuenta? <a class="fw-bold" (click)="openLogin()">Iniciar Sesión</a></p>
     </form>
   </div>
   <div *ngIf="showLogin" class="user-login">
-    <h1>User Login</h1>
+    <h1>Iniciar Sesión</h1>
     <form class="common-form" #userLogin="ngForm" (ngSubmit)="login(userLogin.value)">
       <p class="error-p">{{authError}}</p>
       <input class="form-input"
@@ -54,10 +54,10 @@
              name="email"
              required
              #email="ngModel"
-             placeholder="Enter User Email"
+             placeholder="Ingrese su email"
              ngModel
       >
-      <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Please Enter valid value</span></p>
+      <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Ingrese un correo válido</span></p>
       <input class="form-input"
              type="password"
              name="password"
@@ -65,11 +65,11 @@
              minlength="2"
              maxlength="20"
              #password="ngModel"
-             placeholder="Enter User Password"
+             placeholder="Ingrese su contraseña"
              ngModel
       >
-      <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Please Enter valid value</span></p>
-      <button [disabled]="userLogin.invalid" class="form-button">Login</button>
+      <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Ingrese una contraseña válida</span></p>
+      <button [disabled]="userLogin.invalid" class="form-button">Aceptar</button>
       <p>¿No tienes una cuenta? <a class="fw-bold" (click)="openSignUp()">Regístrate</a></p>
     </form>
   </div>

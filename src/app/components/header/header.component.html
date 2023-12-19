@@ -14,7 +14,7 @@
 
           <!-- Lista desplegable de categorías K-POP -->
           <li>
-            <a href="#" (click)="toggleSubmenu('kpop')" [class.active]="isSubmenuVisible['kpop']">K-POP</a>
+            <a (click)="toggleSubmenu('kpop')" [class.active]="isSubmenuVisible['kpop']">K-POP</a>
           </li>
           <div class="submenu" [class.active]="isSubmenuVisible['kpop']">
             <li (click)="closeCategoryMenu()"><a href="#">Girl Groups</a></li>
@@ -23,7 +23,7 @@
 
           <!-- Lista desplegable de categorías ANIME -->
           <li>
-            <a href="#" (click)="toggleSubmenu('anime')" [class.active]="isSubmenuVisible['anime']">ANIME</a>
+            <a (click)="toggleSubmenu('anime')" [class.active]="isSubmenuVisible['anime']">ANIME</a>
           </li>
           <div class="submenu" [class.active]="isSubmenuVisible['anime']">
             <li (click)="closeCategoryMenu()"><a href="#">Figuras</a></li>
@@ -32,7 +32,7 @@
 
           <!-- Lista desplegable de categorías LECTURA -->
           <li>
-            <a href="#" (click)="toggleSubmenu('lectura')" [class.active]="isSubmenuVisible['lectura']">LECTURA</a>
+            <a (click)="toggleSubmenu('lectura')" [class.active]="isSubmenuVisible['lectura']">LECTURA</a>
           </li>
           <div class="submenu" [class.active]="isSubmenuVisible['lectura']">
             <li (click)="closeCategoryMenu()"><a href="#">Mangas</a></li>

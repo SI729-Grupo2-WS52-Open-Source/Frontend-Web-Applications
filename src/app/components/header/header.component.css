@@ -214,7 +214,6 @@ nav ul a:hover {
   left: 0;
   background-color: white;
   border: 1px solid #ddd;
-  border-radius: 25px;
   box-shadow: none;
   max-height: 100vh;
   overflow-y: auto;
